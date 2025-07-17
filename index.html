@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Universal Quiz Platform</title>
+
+  <!-- Preload background image -->
+  <link rel="preload" href="bulb.jpg" as="image" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Topic Selection -->
+  <div class="topic-selector">
+    <h2>Select a Quiz Topic</h2>
+    <select id="topic-select">
+      <option value="">-- Choose Topic --</option>
+      <option value="srs">Software Engineering (SRS)</option>
+      <option value="history">History</option>
+      <option value="science">Science</option>
+      <option value="sports">Sports</option>
+      <option value="current">Current Affairs</option>
+    </select>
+    <button id="start-btn">Start Quiz</button>
+  </div>
+
+  <!-- Quiz Container (hidden until topic is picked) -->
+  <div class="quiz-container" style="display: none;">
+    <h1>Random Quiz</h1>
+    <div id="question-box">
+      <p id="question">Loading...</p>
+      <div id="options"></div>
+    </div>
+    <button id="next-btn" style="display:none;">Next Question</button>
+    <button id="restart-btn" style="display:none;">Choose Another Topic</button>
+    <p id="score"></p>
+  </div>
+
+  <!-- Quiz Script -->
+  <script src="Script.js"></script>
+</body>
+</html>

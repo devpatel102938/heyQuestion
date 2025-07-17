@@ -1,0 +1,118 @@
+/* Fullscreen background */
+body {
+  font-family: Arial, sans-serif;
+  background: url('bulb.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Topic selector styling */
+.topic-selector {
+  text-align: center;
+  margin: 40px 0;
+}
+#topic-select, #start-btn {
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+#start-btn {
+  background-color: #3399ff;
+  color: #fff;
+  border: none;
+}
+#start-btn:hover {
+  background-color: #267acc;
+}
+
+/* Fade-in effect for the quiz container */
+.quiz-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+  animation-delay: 0.2s;
+}
+
+/* Fade-in keyframe */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+h1 {
+  color: #333;
+}
+
+/* Styling for answer buttons */
+#options button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  width: 100%;
+  border: none;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+#options button:hover {
+  background-color: #d0d0d0;
+}
+
+/* Correct / Wrong feedback */
+.correct { background-color: #a2f0a2 !important; }
+.wrong   { background-color: #f0a2a2 !important; }
+
+/* Next and restart buttons */
+#next-btn, #restart-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3399ff;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+#next-btn:hover, #restart-btn:hover {
+  background-color: #267acc;
+}
+
+/* Score styling */
+#score {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Accessibility: focus outlines */
+#options button:focus,
+#next-btn:focus,
+#restart-btn:focus,
+#start-btn:focus {
+  outline: 2px solid #3399ff;
+  outline-offset: 2px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .quiz-container { width: 90%; padding: 20px; }
+  #options button { font-size: 14px; }
+  #next-btn, #restart-btn, #start-btn { font-size: 14px; padding: 8px 16px; }
+}
